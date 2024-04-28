@@ -8,7 +8,7 @@ build-code-job:
   stage: build
   script:
     - echo "111 ok"
-    - ll
+    - ls -al
     - echo "222 ok" > a.txt
     - pip install -r requirements.txt
     - echo "222 ok"
