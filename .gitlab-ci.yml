@@ -1,0 +1,25 @@
+stages:
+  - build
+  - test
+
+build-code-job:
+  stage: build
+  script:
+    - pip install -r requirements.txt
+    - echo "依赖安装完毕"
+
+test-code-job1:
+  stage: test
+  script:
+    - echo "start _ over1" 
+    - python main.py
+    - echo "运行over1" 
+    # - rake test1
+
+test-code-job2:
+  stage: test
+  script:
+    - echo "start _ over1" 
+    - python main2.py
+    - echo "运行over2 " 
+    # - rake test2
