@@ -1,25 +1,48 @@
-stages:
-  - build
-  - test
 
-build-code-job:
-  stage: build
-  script:
-    - pip install -r requirements.txt
-    - echo "依赖安装完毕"
+image: python:latest
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
 
-test-code-job1:
-  stage: test
-  script:
-    - echo "start _ over1" 
-    - python main.py
-    - echo "运行over1" 
-    # - rake test1
+cache:
+  paths:
+    - .cache/pip
 
-test-code-job2:
-  stage: test
+before_script:
+  - python --version ; pip --version  # For debugging
+  - pip install virtualenv
+  - virtualenv venv
+  - source venv/bin/activate
+
+test:
   script:
-    - echo "start _ over1" 
+    - pip install -r requirements.txt  # you can also use tox
+
+run:
+  script:
+    - pip install .
+    # run the command here
+  artifacts:
+    paths:
+      - log1/
+
+deploy:
+  stage: deploy
+  script: 
+    - echo "run1!"
     - python main2.py
-    - echo "运行over2 " 
-    # - rake test2
+  artifacts:
+    paths:
+      - log1/
+  environment: production
+
+# pages:
+#   script:
+#     - pip install requirements.txt
+#     - cd doc
+#     - make html
+#     - mv build/html/ ../public/
+#   artifacts:
+#     paths:
+#       - public
+#   rules:
+#     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
