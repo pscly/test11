@@ -7,17 +7,12 @@ stages:
 build-code-job:
   stage: build
   script:
+    - echo "111 ok"
     - pip install -r requirements.txt
-    - echo "依赖安装完毕"
+    - echo "222 ok"
 
 test-code-job1:
   stage: test
   script:
+    - python main2.py
     - echo "If the files are built successfully, test some files with one command:"
-    - rake test1
-
-test-code-job2:
-  stage: test
-  script:
-    - echo "If the files are built successfully, test other files with a different command:"
-    - rake test2
