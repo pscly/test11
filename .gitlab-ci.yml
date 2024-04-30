@@ -8,6 +8,10 @@ cache:
     - .cache/pip
 
 
+
+
+
+
 before_script:
   - python3 --version # For debugging
   # - pip install virtualenv
@@ -35,3 +39,6 @@ test-code-job1:
   script:
     - python3 main3.py
     - echo "If the files are built successfully, test some files with one command:"
+  artifacts:
+    paths:
+      - dist/*
