@@ -40,5 +40,5 @@ test-code-job1:
     - echo "If the files are built successfully, test some files with one command:"
   artifacts:
     paths:
-      - dist/*
+      - public
 
