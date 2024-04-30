@@ -37,7 +37,4 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-    - name: Run1
-      run: |
-        python main2.py
       
