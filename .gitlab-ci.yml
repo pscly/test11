@@ -42,3 +42,4 @@ test-code-job1:
   artifacts:
     paths:
       - dist/*
+      - ./dist/*
