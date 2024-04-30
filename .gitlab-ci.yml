@@ -41,6 +41,4 @@ test-code-job1:
   artifacts:
     paths:
       - dist/*
-    reports:
-      dist: dist/*
 
