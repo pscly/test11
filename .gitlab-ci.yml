@@ -1,5 +1,5 @@
 
-image: python:latest
+image: python3:latest
 
 variables:
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
@@ -8,14 +8,11 @@ cache:
     - .cache/pip
 
 
-
 before_script:
-  - python3 --version ; pip --version  # For debugging
+  - python3 --version ; pip3 --version  # For debugging
   - pip3 install virtualenv
   - virtualenv venv
   - source venv/bin/activate
-
-
 
 stages:
   - build
@@ -28,7 +25,7 @@ build-code-job:
     - echo "111 ok"
     - ls -al
     - echo "222 ok" > a.txt
-    # - pip install -r requirements.txt
+    # - pip3 install -r requirements.txt
     - echo "222 ok"
     - echo "222 ok" > a.txt
 
