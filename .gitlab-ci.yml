@@ -1,5 +1,5 @@
 
-image: python3:latest
+image: python:latest
 
 variables:
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
