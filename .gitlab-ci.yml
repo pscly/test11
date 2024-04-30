@@ -10,8 +10,8 @@ cache:
 
 
 before_script:
-  - python --version ; pip --version  # For debugging
-  - pip install virtualenv
+  - python3 --version ; pip --version  # For debugging
+  - pip3 install virtualenv
   - virtualenv venv
   - source venv/bin/activate
 
@@ -35,5 +35,5 @@ build-code-job:
 test-code-job1:
   stage: test
   script:
-    - python main3.py
+    - python3 main3.py
     - echo "If the files are built successfully, test some files with one command:"
