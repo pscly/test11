@@ -28,12 +28,12 @@ build-code-job:
     - echo "111 ok"
     - ls -al
     - echo "222 ok" > a.txt
-    - pip install -r requirements.txt
+    # - pip install -r requirements.txt
     - echo "222 ok"
     - echo "222 ok" > a.txt
 
 test-code-job1:
   stage: test
   script:
-    - python main2.py
+    - python main3.py
     - echo "If the files are built successfully, test some files with one command:"
